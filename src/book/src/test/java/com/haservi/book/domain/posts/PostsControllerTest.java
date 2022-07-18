@@ -6,6 +6,7 @@ import com.haservi.book.domain.posts.repository.Posts;
 import com.haservi.book.domain.posts.repository.PostsRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ class PostsControllerTest {
     @Autowired
     private PostsRepository postsRepository;
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
         postsRepository.deleteAll();
     }
