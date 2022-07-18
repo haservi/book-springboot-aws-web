@@ -1,5 +1,7 @@
 package com.haservi.book.domain.posts;
 
+import com.haservi.book.domain.posts.repository.Posts;
+import com.haservi.book.domain.posts.repository.PostsRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
@@ -10,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 class PostsRepositoryTest {
 

@@ -1,4 +1,4 @@
-package com.haservi.book.domain.posts;
+package com.haservi.book.domain.posts.repository;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -38,5 +38,10 @@ public class Posts {
                 ", content='" + content + '\'' +
                 ", author='" + author + '\'' +
                 '}';
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }

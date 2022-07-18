@@ -1,4 +1,4 @@
-package com.haservi.book.domain.posts;
+package com.haservi.book.domain.posts.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -14,8 +15,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.hamcrest.Matchers.is;
 
 
-@RunWith(SpringRunner.class) // JUnit Vintage?
+//@RunWith(SpringRunner.class) // JUnit Vintage?
 @WebMvcTest(controllers = HelloController.class)
+//@SpringBootTest
 public class HelloControllerTest {
 
     @Autowired
@@ -26,8 +28,8 @@ public class HelloControllerTest {
         String hello = "hello";
 
         mvc.perform(MockMvcRequestBuilders.get("/hello"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(hello)); // hello 인지 검증
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.content().string(hello)); // hello 인지 검증
     }
 
     @Test
@@ -37,12 +39,12 @@ public class HelloControllerTest {
         int amount = 1000;
 
         mvc.perform(MockMvcRequestBuilders.get("/hello/dto")
-                .param("name", name)
-                .param("amount", String.valueOf(amount))
+            .param("name", name)
+            .param("amount", String.valueOf(amount))
         )
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.name", is(name))) // json 응답값 확인용
-                .andExpect(MockMvcResultMatchers.jsonPath("$.amount", is(amount)));
+            .andExpect(MockMvcResultMatchers.status().isOk())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.name", is(name))) // json 응답값 확인용
+            .andExpect(MockMvcResultMatchers.jsonPath("$.amount", is(amount)));
 
     }
 
