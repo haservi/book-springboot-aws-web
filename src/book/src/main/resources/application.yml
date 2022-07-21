@@ -12,3 +12,8 @@ spring:
   h2:
     console:
       enabled: true
+  mustache:
+    suffix: .html
+    charset: UTF-8
+    servlet:
+      content-type: application/json; charset-utf-8
