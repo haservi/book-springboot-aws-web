@@ -25,7 +25,6 @@ public class IndexControllerTest {
 
         // then
         Assertions.assertThat(body).contains("스프링 부트로 시작하는 웹 서비스"); // 2.7.x에서는 무스타치 글자가 안먹힘
-        Assertions.assertThat(body).contains("안녕하세요");
 
     }
 
