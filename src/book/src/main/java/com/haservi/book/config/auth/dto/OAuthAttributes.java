@@ -44,7 +44,7 @@ public class OAuthAttributes {
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                .role(Role.USER) // 로그인 성공 시 권한을 사용자로 등록
                 .build();
     }
 }

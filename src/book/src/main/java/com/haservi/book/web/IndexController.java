@@ -1,5 +1,6 @@
 package com.haservi.book.web;
 
+import com.haservi.book.config.auth.LoginUser;
 import com.haservi.book.config.auth.dto.SessionUser;
 import com.haservi.book.domain.posts.dto.PostsResponseDto;
 import com.haservi.book.domain.posts.dto.PostsSaveRequestDto;
@@ -20,11 +21,11 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
-        sampleData();
+    public String index(Model model, @LoginUser SessionUser user) {
+//        sampleData();
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+//        SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
