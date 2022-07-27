@@ -19,3 +19,5 @@ spring:
       content-type: application/json; charset-utf-8
   profiles:
     include: oauth
+  session:
+    store-type: jdbc
