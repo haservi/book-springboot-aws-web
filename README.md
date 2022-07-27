@@ -15,18 +15,35 @@
 
 ### OAuth2 관련
 
-`application-oauth.yml`파일을 생성하여 [구글 콘솔](https://console.cloud.google.com/) 사이트에서 등록한 웹 어플리케이션을 등록해야 합니다.  
+1. `application-oauth.yml`파일을 생성하여 구글 콘솔 [사이트](https://console.cloud.google.com/)에서 등록한 웹 어플리케이션을 등록해야 합니다.  
 아래와 같이 설정 후 `application.yml`에 해당 파일을 링크 해주면 됩니다.
+2. 네이버 로그인 인증 [사이트](https://developers.naver.com/apps)에서 서비스를 등록한 후 키값을 아래와 같이 설정하면 됩니다.
 
 ```yaml
 spring:
   security:
     oauth2:
       client:
-        registration.google:
-          client-id: client-id-key
-          client-secret: client-secret-key
-          scope: profile, email
+        registration
+          google:
+            client-id: client-id-key
+            client-secret: client-secret-key
+            scope: profile, email
+
+          naver:
+            client-id: client-id-key
+            client-secret: client-secret-key
+            redirect-uri: '{baseUrl}/{action}/oauth2/code/{registrationId}'
+            authorization_grant_type: authorization_code
+            scope: name, email, profile_image
+            client-name: Naver
+
+        provider:
+          naver:
+            authorization_uri: https://nid.naver.com/oauth2.0/authorize
+            token_uri: https://nid.naver.com/oauth2.0/token
+            user-info-uri: https://openapi.naver.com/v1/nid/me
+            user_name_attribute: response
 ```
 
 ```yaml
@@ -34,9 +51,6 @@ spring:
   profiles:
     include: oauth
 ```
-
-로그인 성공 화면  
-![image](images/image01.png)
 
 ### 학습 내용 정리
 
