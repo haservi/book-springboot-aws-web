@@ -71,3 +71,7 @@ spring:
   - 관련 참고 링크: [Link1](https://www.inflearn.com/questions/545116), [Link2](https://velog.io/@jihye/mustache%EC%97%90%EC%84%9C-%ED%95%9C%EA%B8%80%EC%9D%B4-%EA%B9%A8%EC%A7%84%EB%8B%A4-%EB%9A%AB%EB%9A%8F) 
 - @Transactional(readOnly = true)
   - 트랜잭셕 범위는 유지하되, 조회 기능만 남겨두어 조회 속도가 개선되는 효과가 있음
+- `MediaType.APPLICATION_JSON_UTF8`이 **depreacted** 됨
+  - Spring Boot 2.2에서 `charset=utf-8`이 **depreacted** 되었기 때문
+  - `MediaType.APPLICATION_JSON`을 사용하면 됨
+- 

@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,8 @@ class PostsRepositoryTest {
     }
 
     @Test
-    public void 게시글저장_불러오기() {
+    @DisplayName("1. 게시글 저장 불러오기")
+    public void board_save_load() {
 
         // given
         String title = "테스트 게시글";
@@ -54,6 +56,7 @@ class PostsRepositoryTest {
     }
 
     @Test
+    @DisplayName("2. 날짜 자동 등록 확인")
     public void base_time_entity_enroll() {
 
         // given
