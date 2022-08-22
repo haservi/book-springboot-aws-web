@@ -1,8 +1,9 @@
-# 스프링부트와 AWS 혼자 구현하는 웹서버
+# Spring Boot OAuth2 인증
 
 스프링부트와 AWS 혼자 구현하는 웹서버 서적([Link](http://www.yes24.com/Product/Goods/83849117))을 참고하여 학습한 클론 프로젝트입니다.
 
 진행 중 버전 변경에 의한 수정 및 한번 쯤 다시 보면 좋을 내용은 아래에 추가합니다.
+
 
 ## 환경
 
@@ -13,7 +14,13 @@
 
 인텔리J 기본 설정은 다음과 같이 [설정](https://haservi.github.io/posts/spring/spring-intellij-start-setting/) 해주면 됩니다.
 
-### OAuth2 관련
+### OAuth2 인증 테스트
+
+- google
+- naver
+- kakao(추가 예정)
+
+### OAuth2 설정 관련
 
 1. `application-oauth.yml`파일을 생성하여 구글 콘솔 [사이트](https://console.cloud.google.com/)에서 등록한 웹 어플리케이션을 등록해야 합니다.  
 아래와 같이 설정 후 `application.yml`에 해당 파일을 링크 해주면 됩니다.
