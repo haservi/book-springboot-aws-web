@@ -31,7 +31,7 @@ spring:
   security:
     oauth2:
       client:
-        registration
+        registration:
           google:
             client-id: client-id-key
             client-secret: client-secret-key
@@ -81,4 +81,3 @@ spring:
 - `MediaType.APPLICATION_JSON_UTF8`이 **depreacted** 됨
   - Spring Boot 2.2에서 `charset=utf-8`이 **depreacted** 되었기 때문
   - `MediaType.APPLICATION_JSON`을 사용하면 됨
-- 
